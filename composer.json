@@ -12,5 +12,10 @@
       "email": "soen66@163.com"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Soen\\Container\\": "src/"
+    }
+  },
   "minimum-stability": "dev"
 }
