@@ -1,0 +1,16 @@
+{
+  "name": "soen/container",
+  "description": "",
+  "type": "library",
+  "require": {
+    "psr/container": "^1.0@dev"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "soen",
+      "email": "soen66@163.com"
+    }
+  ],
+  "minimum-stability": "dev"
+}
