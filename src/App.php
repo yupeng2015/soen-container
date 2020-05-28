@@ -7,7 +7,7 @@ class App
      */
     public static $app;
     
-    public static function context($id = null){
+    public static function getContext($id = null){
         return self::$app->context;
     }
     

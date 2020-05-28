@@ -20,9 +20,9 @@ class ApplicationContext
      * @throws \ReflectionException
      */
     function getComponent($name){
-        $componentConfig = $this->container[$name];
-        $reflection = new \ReflectionClass($component['class']);
-        $componentObject = $reflection->newInstanceArgs($component['args']);
+        $componentConfig = $this->container->get($name);
+        $reflection = new \ReflectionClass($componentConfig['class']);
+        $componentObject = $reflection->newInstanceArgs($componentConfig['args']);
         return $componentObject;
     }
     
