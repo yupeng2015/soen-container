@@ -14,8 +14,16 @@ class ApplicationContext
         $this->container = $container;
     }
 
-    function getServer($name){
-        $this->container[$name];
+    /**
+     * @param $name
+     * @return object
+     * @throws \ReflectionException
+     */
+    function getComponent($name){
+        $componentConfig = $this->container[$name];
+        $reflection = new \ReflectionClass($component['class']);
+        $componentObject = $reflection->newInstanceArgs($component['args']);
+        return $componentObject;
     }
     
 }

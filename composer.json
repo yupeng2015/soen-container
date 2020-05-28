@@ -15,6 +15,12 @@
   "autoload": {
     "psr-4": {
       "Soen\\Container\\": "src/"
-    }
+    },
+    "classmap": [
+      "src/App.php"
+    ],
+    "files": [
+      "src/functions.php"
+    ]
   }
 }

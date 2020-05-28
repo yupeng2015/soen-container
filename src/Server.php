@@ -15,7 +15,7 @@ class Server
     public $filesystem;
     function __construct($path)
     {
-        $this->filesystem = new File($path);
+        $this->filesystem = (new File())->createFilesystemIterator($path);
     }
 
     /**
@@ -30,11 +30,10 @@ class Server
 
     function parse($configArray){
         foreach ($configArray as $config){
-            $reflection = new \ReflectionClass($config['class']);
             if(isset($this->services[$config['name']])){
-                throw new RuntimeException('服务名:' . $config['name'] . ',该服务已存在!');
+                throw new RuntimeException('组件名:' . $config['name'] . ',该组件已存在!');
             }
-            $this->services[$config['name']] = $reflection->newInstanceArgs($config['property']);
+            $this->services[$config['name']] = $config;
         }
     }
 
