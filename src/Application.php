@@ -4,6 +4,8 @@
 namespace Soen\Container;
 
 
+use Soen\Http\Server\Handler;
+
 class Application
 {
     public $context;
@@ -14,6 +16,6 @@ class Application
     }
 
     function run(){
-        context()->getComponent('router')->test();
+        context()->getComponent('httpServer')->up();
     }
 }
