@@ -25,4 +25,8 @@ class Container implements ContainerInterface
     {
         return isset($this->services[$id]);
     }
+    
+    public function add($id, $component){
+        $this->services[$id] = $component;
+    }
 }
